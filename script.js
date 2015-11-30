@@ -15,7 +15,7 @@ $(document).ready(function(){
         var row = Math.floor(tile/4);
         var col = tile % 4;
         
-        // TODO: 1) generate 4 when only one tile-2 left. 2) generate 2/2 or 2/4 when the game starts.
+        // TODO: 1) check 2/2 or 2/4 tiles when the game starts.
         var newVal = Math.random() < 0.9 ? 2 : 4;
         $('.tile-container').append('<div id = "added" class="tile tile-'+newVal+' grid-'+row+'-'+col+'"><div class="tile-value"></div></div>');  
         $('#added').css('opacity', '0');
