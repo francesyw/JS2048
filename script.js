@@ -43,22 +43,7 @@ $(document).ready(function(){
             case 37: // left
                 for (var col = 0; col <=3; col++) {
                     for (var row = 0; row <= 3; row++) {
-
                         keyMove(row, col, 37);
-                        // var $targetPos = 'grid-'+row+'-'+col;
-                        
-                        // if ($('.tile').hasClass($targetPos)) {
-                        //     var $targetVal = $('div.grid-'+row+'-'+col).find($('div.tile-value')).html();
-                        //     var moveTile = tileMove(row, col, $targetVal, 37);
-                        //     var $destPos = moveTile.destination;
-                        //     var $destVal = 'tile-' + moveTile.tileVal;
-                        //     var merged = moveTile.merged;
-
-                        //     $('.tile.'+$targetPos).removeClass($targetPos).addClass($destPos);
-                        //     $('.tile.'+$destPos).removeClass('tile-'+$targetVal).addClass($destVal);
-                        //     gameInit();
-                        //     if (merged) {$('.'+$destPos).attr("merged", true)};
-                        // }
                     }
                 }                      
                 break;
@@ -66,22 +51,7 @@ $(document).ready(function(){
             case 38: // up              
                 for (var row = 0; row <=3; row++) {
                     for (var col = 0; col <= 3; col++) {
-
                         keyMove(row, col, 38);
-                        // var $targetPos = 'grid-'+row+'-'+col;                    
-
-                        // if ($('.tile').hasClass($targetPos)) {
-                        //     var $targetVal = $('div.grid-'+row+'-'+col).find($('div.tile-value')).html();
-                        //     var moveTile = tileMove(row, col, $targetVal, 38);
-                        //     var $destPos = moveTile.destination;
-                        //     var $destVal = 'tile-' + moveTile.tileVal;
-                        //     var merged = moveTile.merged;
-
-                        //     $('.tile.'+$targetPos).removeClass($targetPos).addClass($destPos);
-                        //     $('.tile.'+$destPos).removeClass('tile-'+$targetVal).addClass($destVal);
-                        //     gameInit();
-                        //     if (merged) {$('.'+$destPos).attr("merged", true)};
-                        // }
                     }
                 } 
                 break;
@@ -89,22 +59,7 @@ $(document).ready(function(){
             case 39: // right
                 for (var col = 3; col >=0; col--) {
                     for (var row = 0; row <= 3; row++) {
-
                         keyMove(row, col, 39);
-                        // var $targetPos = 'grid-'+row+'-'+col;
-                        
-                        // if ($('.tile').hasClass($targetPos)) {
-                        //     var $targetVal = $('div.grid-'+row+'-'+col).find($('div.tile-value')).html();
-                        //     var moveTile = tileMove(row, col, $targetVal, 39);
-                        //     var $destPos = moveTile.destination;
-                        //     var $destVal = 'tile-' + moveTile.tileVal;
-                        //     var merged = moveTile.merged;
-
-                        //     $('.tile.'+$targetPos).removeClass($targetPos).addClass($destPos);
-                        //     $('.tile.'+$destPos).removeClass('tile-'+$targetVal).addClass($destVal);
-                        //     gameInit();
-                        //     if (merged) {$('.'+$destPos).attr("merged", true)};
-                        // }
                     }
                 }                                   
                 break;
@@ -113,22 +68,7 @@ $(document).ready(function(){
             case 40:                             
                 for (var row = 3; row >=0; row--) {
                     for (var col = 0; col <= 3; col++) {
-
                         keyMove(row, col, 40);
-                        // var $targetPos = 'grid-'+row+'-'+col;                    
-
-                        // if ($('.tile').hasClass($targetPos)) {
-                        //     var $targetVal = $('div.grid-'+row+'-'+col).find($('div.tile-value')).html();
-                        //     var moveTile = tileMove(row, col, $targetVal, 40);
-                        //     var $destPos = moveTile.destination;
-                        //     var $destVal = 'tile-' + moveTile.tileVal;
-                        //     var merged = moveTile.merged;
-
-                        //     $('.tile.'+$targetPos).removeClass($targetPos).addClass($destPos);
-                        //     $('.tile.'+$destPos).removeClass('tile-'+$targetVal).addClass($destVal);
-                        //     gameInit();
-                        //     if (merged) {$('.'+$destPos).attr("merged", true)};
-                        // }
                     }
                 }                                                  
                 break;
@@ -141,165 +81,6 @@ $(document).ready(function(){
         // check if any moves left; 1) if no moves - no new tile; 2) if any tiles move - newTile();
         if (isMoved) { newTile() }                     
     })
-       
-
-    // function moveDown(row, col, $tileVal) { 
-    //     // the position of the tile before moving
-    //     var bfMoveRow = row;              
-    //     var merged = false;
-    //     while (row < 3) {        
-    //         row++;
-    //         $obstacle = 'grid-'+row+'-'+col;
-    //         if ($('.tile').hasClass($obstacle)) { 
-    //             if (!$('.'+$obstacle).attr("merged")) {       
-    //                 // compare tile;
-    //                 $obstVal = $('div.'+$obstacle).find($('div.tile-value')).html();
-    //                 if ($tileVal == $obstVal) {
-    //                     // mergeTile();
-    //                     $('.'+$obstacle).remove()
-    //                     $tileVal *= 2;
-    //                     merged = true;
-    //                     break;                
-    //                 } else {
-    //                     row--;                                       
-    //                     break;
-    //                 }
-    //             } else {
-    //                 row--;                                       
-    //                 break;
-    //             }
-    //         }
-    //     }
-    //     if (bfMoveRow !== row) { isMoved = true };        
-
-    //     // remove the new destination from the emptyTiles array
-    //     var index = row * 4 + col;
-    //     emptyTiles.splice( $.inArray(index, emptyTiles), 1 ); 
-    //     // console.log("after move: " + emptyTiles);
-
-    //     $destination = 'grid-' + row + '-' + col;       
-    //     return {
-    //         destination: $destination,
-    //         tileVal: $tileVal,
-    //         merged: merged
-    //     };
-    // }
-
-    // function moveUp(row, col, $tileVal) { 
-    //     // the position of the tile before moving
-    //     var bfMoveRow = row;              
-    //     var merged = false;
-    //     while (row > 0) {        
-    //         row--;
-    //         $obstacle = 'grid-'+row+'-'+col;
-    //         if ($('.tile').hasClass($obstacle)) {    
-    //             if (!$('.'+$obstacle).attr("merged")) {        
-    //                 // compare tile;
-    //                 $obstVal = $('div.'+$obstacle).find($('div.tile-value')).html();
-    //                 if ($tileVal == $obstVal) {
-    //                     // mergeTile();
-    //                     $('.'+$obstacle).remove()
-    //                     $tileVal *= 2;
-    //                     merged = true;
-    //                     break;                
-    //                 } else {
-    //                     row++;                                       
-    //                     break;
-    //                 }
-    //             } else {
-    //                 row++;                                       
-    //                 break;
-    //             }
-    //         }
-    //     }
-    //     if (bfMoveRow !== row) { isMoved = true };                
-    //     var index = row * 4 + col;
-    //     emptyTiles.splice( $.inArray(index, emptyTiles), 1 );         
-    //     $destination = 'grid-' + row + '-' + col;       
-    //     return {
-    //         destination: $destination,
-    //         tileVal: $tileVal,
-    //         merged: merged
-    //     };
-    // }
-
-    // function moveRight(row, col, $tileVal) {  
-    //     var bfMoveCol = col;   
-    //     var merged = false;
-    //     while (col < 3) {        
-    //         col++;
-    //         $obstacle = 'grid-'+row+'-'+col;
-    //         if ($('.tile').hasClass($obstacle)) {   
-    //             if (!$('.'+$obstacle).attr("merged")) {         
-    //                 // compare tile;
-    //                 $obstVal = $('div.'+$obstacle).find($('div.tile-value')).html();
-    //                 if ($tileVal == $obstVal) {
-    //                     // mergeTile();
-    //                     $('.'+$obstacle).remove()
-    //                     $tileVal *= 2;   
-    //                     merged = true;  
-    //                     break;           
-    //                 } else {
-    //                     col--;
-    //                     break;
-    //                 }
-    //             } else {
-    //                 col--;
-    //                 break;
-    //             }
-    //         }
-    //     }
-    //     if (bfMoveCol !== col) { isMoved = true }; 
-    //     var index = row * 4 + col;
-    //     emptyTiles.splice( $.inArray(index, emptyTiles), 1 );         
-    //     $destination = 'grid-' + row + '-' + col;       
-    //     return {
-    //         destination: $destination,
-    //         tileVal: $tileVal,
-    //         merged: merged
-    //     };
-    // }
-
-    // function moveLeft(row, col, $tileVal) {
-    //     var bfMoveCol = col;    
-    //     var merged = false;
-    //     while (col > 0) {        
-    //         // col--;
-    //         $obstacle = 'grid-'+row+'-'+(col-1);
-    //         if ($('.tile').hasClass($obstacle)) {  
-    //             // check if already merged
-    //             if (!$('.'+$obstacle).attr("merged")) {
-    //                 // compare tile;
-    //                 $obstVal = $('div.'+$obstacle).find($('div.tile-value')).html();
-    //                 if ($tileVal == $obstVal) {
-    //                     // mergeTile();
-    //                     $('.'+$obstacle).remove()
-    //                     col--;
-    //                     $tileVal *= 2; 
-    //                     merged = true;
-    //                     break;               
-    //                 } else {
-    //                     // col++;
-    //                     break;
-    //                 }
-    //             } else {
-    //                 // col++;
-    //                 break;
-    //             }
-    //         }
-    //         col--;
-    //     }
-    //     if (bfMoveCol !== col) { isMoved = true }; 
-    //     var index = row * 4 + col;
-    //     emptyTiles.splice( $.inArray(index, emptyTiles), 1 );         
-    //     $destination = 'grid-' + row + '-' + col;       
-    //     return {
-    //         destination: $destination,
-    //         tileVal: $tileVal,
-    //         merged: merged
-    //     };
-    // }
-
 
     function keyMove(row, col, key) {
         var $targetPos = 'grid-'+row+'-'+col;
@@ -348,7 +129,7 @@ $(document).ready(function(){
         }
         if (bfMove !== pos) { isMoved = true };  
         var index = (key == 37 || key == 39) ? (row * 4 + pos) : (pos * 4 + col);
-        emptyTiles.splice( $.inArray(index, emptyTiles), 1 );  // take the new position out of the empty tiles  
+        emptyTiles.splice( $.inArray(index, emptyTiles), 1 );  // remove the new position from the empty tiles  
         $destination = (key == 37 || key == 39) ? ('grid-'+row+'-'+ pos) : ('grid-'+pos+'-'+col);
         return {
             destination: $destination,
